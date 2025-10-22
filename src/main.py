@@ -1,7 +1,7 @@
 from textnode import TextNode, TextType
 
 def main():
-    node = TextNode("hello", TextType.BOLD_TEXT, peener.com)
+    node = TextNode("hello", TextType.BOLD_TEXT)
     print(node)
 
 
