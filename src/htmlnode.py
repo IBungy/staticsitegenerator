@@ -2,21 +2,18 @@ class HTMLNode:
     def __init__(self, tag=None, value=None, children=None, props=None):
         self.tag = tag
         self.value = value
-        self.children = children if children is not None else []
-        self.props = props if props is not None else {}
+        self.children = [] if children is None else children
+        self.props = {} if props is None else props
 
     def to_html(self):
-        raise NotimplementedError()
+        raise NotImplementedError()
 
     def props_to_html(self):
         if not self.props:
             return ""
-        html_string = ""
-        for key, value in self.props.items():
-            html_string += f' {key}="{value}"'
-        return html_string
-    
+        return "".join(f' {k}="{v}"' for k, v in self.props.items())
+
     def __repr__(self):
-        return f"HTMLNode(tag={self.tag}, value={self.value}, children={len(self.children)}, props={len(self.props)})"
+        return f"HTMLNode(tag={self.tag}, value={self.value}, children={self.children}, props={self.props})"
     
         
