@@ -13,9 +13,9 @@ class TestTextNode(unittest.TestCase):
         node2 = TextNode("This is a different text node", TextType.BOLD)
         self.assertNotEqual(node, node2)
     def test_text_types(self):
-        node_plain = TextNode("Plain text", TextType.PLAIN)
+        node_text = TextNode("Plain text", TextType.TEXT)
         node_bold = TextNode("Plain text", TextType.BOLD)
-        self.assertNotEqual(node_plain, node_bold)
+        self.assertNotEqual(node_text, node_bold)
 
 class TestTextNodeToHTMLNode(unittest.TestCase):
     def test_text(self):
